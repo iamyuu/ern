@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from '~/utils/functions';
 import * as Slot from '@rn-primitives/slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
@@ -6,7 +6,7 @@ import { Platform, Text as RNText, type Role } from 'react-native';
 
 const textVariants = cva(
   cn(
-    'text-base text-foreground',
+    'text-zinc-950 text-base dark:text-zinc-50',
     Platform.select({
       web: 'select-text',
     })
@@ -20,7 +20,7 @@ const textVariants = cva(
           Platform.select({ web: 'scroll-m-20 text-balance' })
         ),
         h2: cn(
-          'border-b border-border pb-2 text-3xl font-semibold tracking-tight',
+          'border-zinc-200 border-b pb-2 text-3xl font-semibold tracking-tight dark:border-zinc-800',
           Platform.select({ web: 'scroll-m-20 first:mt-0' })
         ),
         h3: cn('text-2xl font-semibold tracking-tight', Platform.select({ web: 'scroll-m-20' })),
@@ -28,12 +28,12 @@ const textVariants = cva(
         p: 'mt-3 leading-7 sm:mt-6',
         blockquote: 'mt-4 border-l-2 pl-3 italic sm:mt-6 sm:pl-6',
         code: cn(
-          'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold'
+          'bg-zinc-100 relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold dark:bg-zinc-800'
         ),
-        lead: 'text-xl text-muted-foreground',
+        lead: 'text-zinc-500 text-xl dark:text-zinc-400',
         large: 'text-lg font-semibold',
         small: 'text-sm font-medium leading-none',
-        muted: 'text-sm text-muted-foreground',
+        muted: 'text-zinc-500 text-sm dark:text-zinc-400',
       },
     },
     defaultVariants: {
